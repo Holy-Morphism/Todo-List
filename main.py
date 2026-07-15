@@ -1,8 +1,13 @@
-# Creating a basic CRUD app for deployment
+from fastapi import FastAPI
 
-def main():
-    print("Hello from demo!")
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def root():
+    return {"message": "Welcome to Basic Fastapi app"}
+
+
+@app.get("/help")
+def help():
+    return {"message": "Please call 912"}
