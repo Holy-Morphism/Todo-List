@@ -12,3 +12,9 @@ wheels/
 # Enviroment files
 *.env
 !example.env
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
