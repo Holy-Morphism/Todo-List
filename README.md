@@ -23,3 +23,10 @@ To stop with docker compose:
 ```bash
 docker compose down
 ```
+
+To apply alembic migrations in docker:
+
+```bash
+docker compose exec app uv run alembic revision --autogenerate -m "<message>"
+docker compose exec app uv run alembic upgrade head
+```

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C /home/dev/developement/demo ls-files)"
+      "Bash(docker compose *)",
+      "Bash(docker volume *)",
+      "Bash(docker run *)",
+      "Bash(uv run *)"
     ]
   }
 }

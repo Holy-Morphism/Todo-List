@@ -1,14 +1,14 @@
 from collections.abc import AsyncGenerator
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 
 class Settings(BaseSettings):
     database_url: str
 
-    class Config:
-        env_file:".env"
+    model_config = SettingsConfigDict(env_file=".env",extra="ignore")
+
 
 settings = Settings()
 

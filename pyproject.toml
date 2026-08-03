@@ -1,10 +1,11 @@
 [project]
-name = "Todo List"
+name = "todo-list"
 version = "0.1.0"
 description = "An extremely over engineered website"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.18.5",
     "asyncpg>=0.31.0",
     "fastapi[standard]>=0.139.0",
     "pydantic-settings>=2.14.2",
