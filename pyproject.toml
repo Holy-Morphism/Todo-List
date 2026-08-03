@@ -1,9 +1,12 @@
 [project]
-name = "demo"
+name = "Todo List"
 version = "0.1.0"
-description = "Add your description here"
+description = "An extremely over engineered website"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "asyncpg>=0.31.0",
     "fastapi[standard]>=0.139.0",
+    "pydantic-settings>=2.14.2",
+    "sqlalchemy[asyncio]>=2.0.51",
 ]
