@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-slate-100 flex items-start justify-center py-16 px-4">
+    <main class="w-full max-w-md">
+        <h1 class="text-3xl font-bold tracking-tight text-white mb-6 text-center">Todos</h1>
+
+        <form
+            hx-post="/todos"
+            hx-target="#todo-list"
+            hx-swap="beforeend"
+            hx-on::after-request="this.reset()"
+            class="flex gap-2 mb-6"
+        >
+            <input
+                type="text"
+                name="content"
+                placeholder="What needs doing?"
+                required
+                class="flex-1 rounded-lg bg-slate-800/80 border border-slate-700 px-4 py-2.5 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+            >
+            <button
+                type="submit"
+                class="rounded-lg bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-950/50 transition"
+            >
+                Add
+            </button>
+        </form>
+
+        <ul id="todo-list" class="space-y-2">{% include "partials/todo_list.html" %}</ul>
+    </main>
+</body>
+</html>

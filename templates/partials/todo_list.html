@@ -1,0 +1,16 @@
+{% for todo in todos %}
+<li
+    id="todo-{{ todo.id }}"
+    class="group flex items-center justify-between gap-3 rounded-lg bg-slate-800/60 border border-slate-700/60 px-4 py-3 text-sm"
+>
+    <span class="text-slate-100">{{ todo.content }}</span>
+    <button
+        hx-delete="/todos/{{ todo.id }}"
+        hx-target="#todo-{{ todo.id }}"
+        hx-swap="outerHTML"
+        class="opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-400 text-xs font-medium transition"
+    >
+        Delete
+    </button>
+</li>
+{% endfor %}
